@@ -1,0 +1,127 @@
+.contact-form__content{
+    margin: 0 auto;
+    padding: 30px 15px;
+    max-width: 1230px;
+}
+
+.contact-form__heading{
+    margin-bottom: 40px;
+    text-align: center;
+    color: #726250
+}
+
+.form{
+    margin: 0 auto;
+    width: 70%;
+    text-align: center;
+    color: #726250
+}
+
+.form__group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.form__label--required{
+    margin-left: 5px;
+    padding: 4px 6px;
+    border-radius: 3px;
+    background: #fafafa;
+    color: #ff0000;
+}
+
+.form__error {
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+
+.form__input--text input,
+.form__input--textarea textarea {
+    padding: 10px;
+    width:600px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #ddd;
+    color:#bda393;
+}
+
+.form__input--text input{
+    height: 40px;
+}
+
+.form__input--textarea textarea {
+    height: 180px;
+}
+
+.last__name,
+.first__name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #ddd;
+    color: #bda393;
+}
+
+.last__name {
+    margin-right: 50px;
+}
+
+.gender {
+    display: flex;
+    color: #726250;
+}
+
+.gender__m,
+.gender__f {
+margin-right: 30px;
+}
+
+.tel1,
+.tel2,
+.tel3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #ddd;
+}
+
+.tel1,
+.tel2 {
+    margin-right: 50px;
+}
+
+.name-select,
+.select {
+    align-items: center;
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #ddd;
+    color: #bda393;
+}
+
+.form__button{
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 30%;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+    background: #725250;
+    color: #fff;
+    cursor: pointer;
+}
