@@ -24,23 +24,26 @@
 }
 
 .confirm-table__header {
-    padding: 15px;
-    width: 20%;
+    width: 300px;
+    min-width: 160px;
     border-bottom: 1px solid #ddd;
     background-color: #bda393;
-    color: #ffff
+    color: #ffff;
+    padding: 15px;
     }
 
 .confirm-table__text {
-    padding: 15px;
     border-bottom: 1px solid #ddd;
-    color: #726250;
 }
 
 .confirm-table__text input {
     width: 100%;
     outline: none;
     border: none;
+    background: transparent;
+    color: #726250;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 .confirm-table__row:last-child .confirm-table__header,

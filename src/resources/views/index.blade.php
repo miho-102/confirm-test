@@ -10,7 +10,8 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form">
+    <form class="form" action="/confirm" method="post">
+        @csrf
         <div class="form__group">
             <div class="form__group-title">
                 <span class="form__label--item">お名前</span>
@@ -33,9 +34,9 @@
             </div>
             <div class="form__group-content">
                 <div class="gender">
-                    <input type="radio" name="gender__m" value="male">男性
-                    <input type="radio" name="gender__f" value="female">女性
-                    <input type="radio" name="gender__o" value="other">その他
+                    <label><input type="radio" name="gender" value="1">男性</label>
+                    <label><input type="radio" name="gender" value="2">女性</label>
+                    <label><input type="radio" name="gender" value="3">その他</label>
                 </div>
                 <div class="form__error">
                     <!--バリデーション機能を実装したら記述します。-->
@@ -106,16 +107,18 @@
                 <span class="form__label--item">お問い合わせの種類</span>
                 <span class="form__label--required">※</span>
             </div>
-            <form action="detail.html" method="get">
-                <label for="name-select">選択してください</label>
-                <select name="select">
-                    <option value="商品のお届けについて">商品のお届けについて</option>
-                    <option value="商品の交換について">商品の交換について</option>
-                    <option value="商品トラブル">商品トラブル</option>
-                    <option value="ショップへのお問い合わせ">ショップへのお問い合わせ</option>
-                    <option value="その他">その他</option>
-                </select>
-            </form>
+            <div class="form__group-content">
+                <div class="form__input--select">
+                    <select name="category_id">
+                        <option value="" disabled selected>選択してください</option>
+                        <option value="商品のお届けについて">商品のお届けについて</option>
+                        <option value="商品の交換について">商品の交換について</option>
+                        <option value="商品トラブル">商品トラブル</option>
+                        <option value="ショップへのお問い合わせ">ショップへのお問い合わせ</option>
+                        <option value="その他">その他</option>
+                    </select>
+                </div>
+            </div>
             <div class="form__error">
                 <!--バリデーション機能を実装したら記述します。-->
             </div>

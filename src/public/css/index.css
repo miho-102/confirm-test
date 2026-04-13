@@ -1,127 +1,146 @@
-.contact-form__content{
+.contact-form__content {
     margin: 0 auto;
     padding: 30px 15px;
     max-width: 1230px;
 }
 
-.contact-form__heading{
+.contact-form__heading {
     margin-bottom: 40px;
     text-align: center;
-    color: #726250
+    color: #726250;
 }
 
-.form{
+.form {
     margin: 0 auto;
-    width: 70%;
-    text-align: center;
-    color: #726250
+    width: 100%;
+    max-width: 900px;
+    color: #726250;
 }
 
 .form__group {
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    align-items: flex-start;
 }
 
-.form__label--required{
+.form__group-title {
+    width: 30%;
+    min-width: 200px;
+    padding-top: 10px;
+}
+
+.form__group-content {
+    flex: 1;
+}
+
+.form__label--required {
     margin-left: 5px;
-    padding: 4px 6px;
-    border-radius: 3px;
-    background: #fafafa;
     color: #ff0000;
+}
+
+.form__input--text,
+.form__input--textarea {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.gender label {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.gender label:last-child {
+    margin-right: 0;
+}
+
+.gender input[type="radio"] {
+    accent-color: #725250;
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
+.form__input--text input,
+.form__input--textarea textarea,
+select {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #ddd;
+    color: #bda393;
+    box-sizing: border-box;
+    outline: none;
+}
+
+.form__input--text input[name="email"],
+.form__input--text input[name="address"],
+.form__input--text input[name="building"] {
+    width: 100%;
+}
+
+input[name="last__name"],
+input[name="first__name"] {
+    width: 50%;
+}
+
+input[name="tel1"],
+input[name="tel2"],
+input[name="tel3"] {
+    width: 30%;
+    text-align: center;
+}
+
+.form__input--textarea textarea {
+    width: 100%;
+    min-height: 150px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    display: block;
+}
+
+select {
+    width: 100%;
+    height: 45px;
 }
 
 .form__error {
     height: 20px;
+    font-size: 12px;
     color: #ff0000;
     text-align: left;
+    margin-top: 5px;
 }
 
-.form__input--text input,
-.form__input--textarea textarea {
-    padding: 10px;
-    width:600px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background: #ddd;
-    color:#bda393;
-}
-
-.form__input--text input{
-    height: 40px;
-}
-
-.form__input--textarea textarea {
-    height: 180px;
-}
-
-.last__name,
-.first__name {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background: #ddd;
-    color: #bda393;
-}
-
-.last__name {
-    margin-right: 50px;
-}
-
-.gender {
-    display: flex;
-    color: #726250;
-}
-
-.gender__m,
-.gender__f {
-margin-right: 30px;
-}
-
-.tel1,
-.tel2,
-.tel3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    width: 200px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background: #ddd;
-}
-
-.tel1,
-.tel2 {
-    margin-right: 50px;
-}
-
-.name-select,
-.select {
-    align-items: center;
-    padding: 10px;
-    width: 300px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    background: #ddd;
-    color: #bda393;
-}
-
-.form__button{
-    margin-top: 30px;
+.form__button {
+    margin-top: 40px;
+    text-align: center;
 }
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
+    width: 250px;
     height: 50px;
     border: none;
     border-radius: 3px;
     background: #725250;
     color: #fff;
     cursor: pointer;
+    font-size: 16px;
+}
+
+.form__input--select {
+    width: 50%;
+}
+
+.form__input--select select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background: #ddd;
+    color: #bda393;
+    cursor: pointer;
+    box-sizing: border-box;
 }
