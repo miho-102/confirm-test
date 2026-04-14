@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/',[ContactController::class,'index']);
 Route::post('/confirm',[ContactController::class,'confirm']);
 route::post('/thanks',[ContactController::class,'store']);
+Route::post('/back', [ContactController::class, 'back']);

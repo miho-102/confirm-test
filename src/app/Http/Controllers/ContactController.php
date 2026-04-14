@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use App\Models\Contact;
 use App\Models\Category;
@@ -35,4 +36,9 @@ class ContactController extends Controller
 
         return view('thanks');
     }
+
+    public function back(Request $request)
+    {
+        return redirect('/')->withInput();
+        }
 }
