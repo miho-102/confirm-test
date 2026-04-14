@@ -21,8 +21,8 @@
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
                         <input type="text" name="name" value="{{ $contact['name'] }}" readonly />
-                        <input type="hidden" name="last_name" value="{{ $contact['last__name'] }}" />
-                        <input type="hidden" name="first_name" value="{{ $contact['first__name'] }}" />
+                        <input type="hidden" name="last__name" value="{{ $contact['last__name'] }}" />
+                        <input type="hidden" name="first__name" value="{{ $contact['first__name'] }}" />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -41,7 +41,13 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">電話番号</th>
                     <td class="confirm-table__text">
-                        <input type="tel" name="tel" value="{{ str_replace([' ', ' '], '', $contact['tel']) }}" readonly />
+                        @php
+                        $full_tel = $contact['tel1'] . $contact['tel2'] . $contact['tel3'];
+                        @endphp
+                        <input type="text" value="{{ $full_tel }}" readonly />
+                        <input type="hidden" name="tel1" value="{{ $contact['tel1'] }}" />
+                        <input type="hidden" name="tel2" value="{{ $contact['tel2'] }}" />
+                        <input type="hidden" name="tel3" value="{{ $contact['tel3'] }}" />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -73,7 +79,7 @@
         </div>
         <div class="form__button">
             <button class="submit-btn" type="submit">送信</button>
-            <button class="back-btn" type="submit">修正</button>
+            <button class="back-btn" type="submit" formaction="/">修正</button>
         </div>
     </form>
 </div>

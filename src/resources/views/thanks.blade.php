@@ -13,14 +13,14 @@
 <body>
     <main>
         <div class="thanks__content">
-        <div class="thanks__main">
+            <div class="thanks__main">
             <h2>お問い合わせありがとうございました</h2>
+            </div>
+            <div class="form__button">
+                <button class="back__home-btn" type="submit">HOME</button>
+            </div>
         </div>
         <div class="thanks__back-font">Thank you</div>
-        </div>
-        <div class="form__button">
-            <button class="back__home-btn" type="submit">HOME</button>
-        </div>
     </main>
 </body>
 
