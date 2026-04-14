@@ -13,13 +13,16 @@
     <div class="confirm__heading">
         <h2>Confirm</h2>
     </div>
-    <form class="form">
+    <form class="form" action="/thanks" method="post">
+    @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お名前</th>
                     <td class="confirm-table__text">
                         <input type="text" name="name" value="{{ $contact['name'] }}" readonly />
+                        <input type="hidden" name="last_name" value="{{ $contact['last__name'] }}" />
+                        <input type="hidden" name="first_name" value="{{ $contact['first__name'] }}" />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
@@ -56,7 +59,8 @@
                 <tr class="confirm-table__row">
                     <th class="confirm-table__header">お問い合わせの種類</th>
                     <td class="confirm-table__text">
-                        <input type="text" name="category_id" value="{{ $contact['category_id'] }}" readonly />
+                        <input type="text" value="{{ $contact['category_content'] }}" readonly />
+                        <input type="hidden" name="category_id" value="{{ $contact['category_id'] }}" />
                     </td>
                 </tr>
                 <tr class="confirm-table__row">
