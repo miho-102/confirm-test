@@ -1,0 +1,42 @@
+.auth-card {
+    max-width: 550px;
+    margin: 0 auto;
+    border-top: 5px solid #726250;
+}
+
+.form-group {
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.form-group label::after {
+    content: " *";
+    color: #a94442;
+    font-size: 12px;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 15px;
+    letter-spacing: 0.2em;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input:focus {
+    outline: 1px solid #726250;
+    background-color: #ffffff;
+}
+
+.auth-link {
+    display: block;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #726250;
+    text-decoration: none;
+    text-align: right;
+}
+
+.auth-link:hover {
+    text-decoration: underline;
+}
