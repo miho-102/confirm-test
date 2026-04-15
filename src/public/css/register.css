@@ -1,42 +1,78 @@
-.auth-card {
-    max-width: 550px;
+.page-title,
+.form-group label {
+    color: #726250;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 2rem 0;
+    font-weight: bold;
+}
+
+form {
+    max-width: 400px;
     margin: 0 auto;
-    border-top: 5px solid #726250;
+    padding: 20px;
 }
 
 .form-group {
-    margin-bottom: 30px;
-    position: relative;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.form-group label::after {
-    content: " *";
-    color: #a94442;
-    font-size: 12px;
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
 }
 
-.btn-register {
+.form-group input {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #cbd5e0;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn {
     width: 100%;
-    padding: 15px;
-    letter-spacing: 0.2em;
-    font-weight: bold;
-    text-transform: uppercase;
+    padding: 12px;
+    background-color: #726250;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
-input:focus {
-    outline: 1px solid #726250;
-    background-color: #ffffff;
+.btn:hover {
+    opacity: 0.8;
 }
 
-.auth-link {
-    display: block;
-    margin-top: 20px;
-    font-size: 13px;
+.login-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #f4f4f4;
     color: #726250;
+    border: 1px solid #e0dfde;
+    border-radius: 4px;
     text-decoration: none;
-    text-align: right;
+    font-size: 14px;
+    cursor: pointer;
 }
-
-.auth-link:hover {
-    text-decoration: underline;
+.error-message {
+    color: #ff0000;
+    /* 赤色で表示 */
+    font-size: 14px;
+    margin-top: 5px;
 }

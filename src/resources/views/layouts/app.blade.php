@@ -14,11 +14,15 @@
 <body>
   <header class="header">
     <div class="header__inner">
-      <a class="header__logo" href="/">
-        FashionablyLate
-      </a>
+        <div class="header__spacer"></div>
+        <div class="header__logo">
+            <h1 class="logo-text">FashionablyLate</h1>
+        </div>
+        <nav class="header__nav">
+            @yield('header')
+        </nav>
     </div>
-  </header>
+</header>
 
   <main>
     @yield('content')

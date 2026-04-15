@@ -1,35 +1,78 @@
-.auth-card {
-    max-width: 450px;
-    margin: 0 auto;
-    border-bottom: 5px solid #726250;
+.page-title,
+.form-group label {
+    color: #726250;
 }
 
-.btn-login {
-    width: 100%;
-    padding: 15px;
-    letter-spacing: 0.2em;
+.page-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 40px 0;
     font-weight: bold;
 }
 
-.login-extra {
-    margin-top: 25px;
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
     display: flex;
-    justify-content: space-between;
-    font-size: 13px;
+    flex-direction: column;
 }
 
-.login-extra a {
+.form-group label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #cbd5e0;
+}
+
+.form-footer {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #726250;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.register-btn {
+    display: inline-block;
+    padding: 8px 24px;
+    background-color: #f4f4f4;
     color: #726250;
+    border: 1px solid #e0dfde;
+    border-radius: 4px;
     text-decoration: none;
-    transition: opacity 0.3s;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.login-extra a:hover {
-    text-decoration: underline;
-    opacity: 0.7;
-}
-
-input:focus {
-    outline: 1px solid #726250;
-    background-color: #ffffff;
+.error-message {
+    color: #ff0000;
+    /* 赤色で表示 */
+    font-size: 14px;
+    margin-top: 5px;
 }
