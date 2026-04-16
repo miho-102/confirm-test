@@ -1,222 +1,257 @@
-body{
-    background-color: #fff;
+body {
+    background-color: #f6f6f6;
     color: #726250;
     margin: 0;
-    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;}
+    line-height: 1.6;
+}
 
-   .page-title {
-       text-align: center;
-       font-size: 24px;
-       margin: 40px 0;
-       font-weight: bold;
-       color: #726250;
-   }
+.header__logout-btn {
+    float: right;
+    margin: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 5px 20px;
+    cursor: pointer;
+    color: #726250;
+    font-size: 14px;
+}
 
-   /* =========================================
-   検索セクション
-   ========================================= */
-   .search-section {
-       max-width: 1200px;
-       margin: 0 auto 20px;
-       padding: 0 20px;
-   }
+.page-title {
+    text-align: center;
+    font-size: 28px;
+    margin: 60px 0;
+    font-weight: bold;
+    clear: both;
+}
 
-   .search-form {
-       display: flex;
-       align-items: center;
-       gap: 15px;
-       flex-wrap: wrap;
-   }
+/* --- 検索フォーム（日付の横にボタンを配置） --- */
+.search-section {
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
 
-   /* 入力要素の共通スタイル */
-   .input-keyword,
-   .select-gender,
-   .select-category,
-   .input-date {
-       height: 45px;
-       border: 1px solid #E0DFDE;
-       background-color: #FBFBFB;
-       padding: 0 15px;
-       color: #726250;
-       /* 文字色 */
-       box-sizing: border-box;
-   }
+.search-form {
+    display: flex;
+    flex-wrap: nowrap;
+    /* 1行に並べる */
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 
-   .input-keyword {
-       flex: 2;
-       min-width: 250px;
-   }
+.input-keyword,
+.select-gender,
+.select-category,
+.input-date {
+    border: 1px solid #ddd;
+    padding: 12px;
+    background-color: #fff;
+    color: #726250;
+    font-size: 14px;
+    height: 45px;
+    /* 高さを統一 */
+    box-sizing: border-box;
+}
 
-   .select-gender {
-       flex: 0.5;
-       min-width: 100px;
-   }
+.input-keyword {
+    flex: 2.5;
+    min-width: 250px;
+}
 
-   .select-category {
-       flex: 1.5;
-       min-width: 200px;
-   }
+.select-gender {
+    flex: 0.8;
+    min-width: 80px;
+}
 
-   .input-date {
-       flex: 1;
-       min-width: 150px;
-   }
+.select-category {
+    flex: 1.5;
+    min-width: 180px;
+}
 
-   /* ボタンエリア */
-   .form-actions {
-       display: flex;
-       gap: 15px;
-       margin-left: auto;
-   }
+.input-date {
+    flex: 1.2;
+    min-width: 150px;
+}
 
-   .search-btn {
-       background-color: #726250;
-       /* ボタン背景色も統一 */
-       color: #fff;
-       border: none;
-       padding: 0 40px;
-       height: 45px;
-       cursor: pointer;
-       font-weight: bold;
-   }
+/* ボタンエリアを日付の横に結合 */
+.form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    /* ボタンが潰れないように固定 */
+}
 
-   .reset-btn {
-       background-color: #F4F4F4;
-       color: #726250;
-       text-decoration: none;
-       padding: 0 20px;
-       height: 45px;
-       display: flex;
-       align-items: center;
-       font-size: 14px;
-   }
+.search-btn {
+    background-color: #726250;
+    /* 指定の濃い茶色 */
+    color: #fff;
+    border: none;
+    padding: 0 35px;
+    cursor: pointer;
+    font-size: 15px;
+    height: 45px;
+    /* 入力欄と高さを合わせる */
+    white-space: nowrap;
+}
 
-   /* =========================================
-   ユーティリティ（エクスポート・ページネーション）
-   ========================================= */
-   .table-utility {
-       max-width: 1200px;
-       margin: 0 auto 10px;
-       padding: 0 20px;
-       display: flex;
-       justify-content: space-between;
-       align-items: flex-end;
-   }
+.reset-btn {
+    background-color: transparent !important;
+    /* 背景なし */
+    color: #726250 !important;
+    text-decoration: underline !important;
+    /* 下線ありで見本に寄せる */
+    border: none !important;
+    padding: 0 !important;
+    white-space: nowrap !important;
+    }
 
-   .export-btn {
-       background-color: #F4F4F4;
-       color: #726250;
-       border: none;
-       padding: 10px 25px;
-       cursor: pointer;
-       font-size: 14px;
-   }
+/* --- ユーティリティ (エクスポート・ページネーション) --- */
+.table-utility {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1100px;
+    margin: 40px auto 20px !important;
+    padding: 0 10px !important;
+}
 
-   /* =========================================
-   管理画面テーブル
-   ========================================= */
-   .admin-table {
-       max-width: 1200px;
-       width: calc(100% - 40px);
-       margin: 0 auto 40px;
-       border-collapse: collapse;
-   }
+.export-btn {
+    background-color: #ede4dc !important;
+    color: #726250 !important;
+    border: none !important;
+    padding: 10px 25px !important;
+        /* 上下左右に適切な余白 */
+    font-size: 14px !important;
+    white-space: nowrap !important;
+        /* ★文字の折り返しを絶対に防ぐ */
+    cursor: pointer !important;
+    display: inline-block !important;
+    line-height: 1 !important;
+        /* 行の高さをリセット */
+}
 
-   .admin-table th {
-       background-color: #726250;
-       /* ヘッダー背景 */
-       color: #fff;
-       text-align: left;
-       padding: 15px;
-       font-weight: normal;
-   }
+.pagination {
+    display: flex !important;
+    justify-content: flex-end !important;
+    width: 100%;
+}
 
-   .admin-table td {
-       padding: 15px;
-       border-bottom: 1px solid #E0DFDE;
-       background-color: #fff;
-       color: #726250;
-   }
+/* ページネーション崩れ防止 */
+.pagination nav>div:first-child {
+    display: none !important;
+}
 
-   /* 要件：hover機能 */
-   .admin-table tr:hover td {
-       background-color: #FBFBFB;
-       transition: 0.3s;
-   }
+.pagination svg {
+    width: 20px !important;
+    height: 20px !important;
+}
 
-   .detail-btn {
-       background-color: #F4F4F4;
-       color: #726250;
-       border: 1px solid #E0DFDE;
-       padding: 5px 20px;
-       cursor: pointer;
-   }
+.pagination a,
+.pagination span {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-width: 38px;
+    height: 38px;
+    border: 1px solid #e0e0e0 !important;
+    background-color: #fff !important;
+    color: #726250 !important;
+    text-decoration: none;
+    margin-left: -1px;
+}
 
-   /* =========================================
-   モーダル (詳細表示)
-   ========================================= */
-   .modal-overlay {
-       display: none;
-       position: fixed;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       background: rgba(0, 0, 0, 0.4);
-       z-index: 100;
-   }
+.pagination nav>div:first-child,
+.pagination p.text-sm.text-gray-700 {
+    display: none !important;
+}
 
-   .modal {
-       display: none;
-       position: fixed;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%, -50%);
-       width: 90%;
-       max-width: 600px;
-       background: #fff;
-       z-index: 101;
-       padding: 50px;
-       box-sizing: border-box;
-       color: #726250;
-   }
+.pagination span[aria-current="page"] span {
+    background-color: #726250 !important;
+    color: #fff !important;
+}
 
-   .modal.is-open,
-   .modal-overlay.is-open {
-       display: block;
-   }
+/* --- 管理テーブル --- */
+.admin-table {
+    width: calc(100% - 40px);
+    max-width: 1100px;
+    margin: 0 auto 80px;
+    border-collapse: collapse;
+    background-color: #fff;
+}
 
-   .modal__close-btn {
-       position: absolute;
-       top: 20px;
-       right: 20px;
-       background: none;
-       border: 1px solid #726250;
-       color: #726250;
-       border-radius: 50%;
-       width: 30px;
-       height: 30px;
-       cursor: pointer;
-       font-size: 20px;
-   }
+.admin-table thead {
+    display: table-header-group;
+}
 
-   .modal-table {
-       width: 100%;
-       border-collapse: collapse;
-       margin-bottom: 30px;
-   }
+.admin-table th {
+    background-color: #726250 !important;
+    color: #fff !important;
+    padding: 18px;
+    text-align: left;
+    font-weight: normal;
+}
 
-   .modal-table th {
-       text-align: left;
-       width: 30%;
-       padding: 15px 0;
-       color: #726250;
-   }
+.admin-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    color: #726250;
+}
 
-   /* =========================================
-   ページネーション
-   ========================================= */
-   .pagination svg {
-       width: 20px;
-       color: #726250;
-   }
+.detail-btn {
+    background-color: #fff;
+    border: 1px solid #726250;
+    color: #726250;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+/* --- モーダル中央配置 --- */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    padding: 40px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.modal__delete-btn {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+}
