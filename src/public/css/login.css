@@ -72,7 +72,6 @@ form {
 
 .error-message {
     color: #ff0000;
-    /* 赤色で表示 */
     font-size: 14px;
     margin-top: 5px;
 }

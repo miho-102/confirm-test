@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\controllers\ContactController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,6 @@ Route::post('/confirm',[ContactController::class,'confirm']);
 route::post('/thanks',[ContactController::class,'store']);
 Route::post('/back', [ContactController::class, 'back']);
 Route::get('/register', [AuthController::class, 'register']);
+Route::post('/register', [AuthController::class, 'store']);
 Route::get('/login', [AuthController::class, 'login']);
+Route::get('/admin', [AdminController::class, 'index']);
