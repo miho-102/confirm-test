@@ -45,7 +45,9 @@
 </div>
 
     <div class="table-utility">
-        <button class="export-btn">エクスポート</button>
+        <a href="{{ url('/admin/export') }}?{{ http_build_query(request()->query()) }}" class="export-btn">
+            エクスポート
+        </a>
         <div class="pagination">
             {{ $contacts->links() }}
         </div>
@@ -76,27 +78,30 @@
             @endforeach
         </tbody>
     </table>
-<div class="modal" id="detail-modal">
+<div class="modal {{ $detail ? 'is-show' : '' }}">
     <div class="modal__inner">
-        <button class="modal__close-btn" id="modal-close">×</button>
+        <a href="{{ request()->fullUrlWithQuery(['id' => null]) }}" class="modal__close-btn">×</a>
+
+        @if($detail)
         <div class="modal__content">
             <table class="modal-table">
-                <tr><th>お名前</th><td id="modal-name"></td></tr>
-                <tr><th>性別</th><td id="modal-gender"></td></tr>
-                <tr><th>メールアドレス</th><td id="modal-email"></td></tr>
-                <tr><th>電話番号</th><td id="modal-tel"></td></tr>
-                <tr><th>住所</th><td id="modal-address"></td></tr>
-                <tr><th>建物名</th><td id="modal-building"></td></tr>
-                <tr><th>お問い合わせの種類</th><td id="modal-category"></td></tr>
-                <tr><th>お問い合わせ内容</th><td id="modal-detail"></td></tr>
+                <tr><th>お名前</th><td>{{ $detail->last_name }} {{ $detail->first_name }}</td></tr>
+                <tr><th>性別</th><td>{{ $detail->gender_label }}</td></tr>
+                <tr><th>メールアドレス</th><td>{{ $detail->email }}</td></tr>
+                <tr><th>電話番号</th><td>{{ $detail->tel }}</td></tr>
+                <tr><th>住所</th><td>{{ $detail->address }}</td></tr>
+                <tr><th>建物名</th><td>{{ $detail->building }}</td></tr>
+                <tr><th>お問い合わせの種類</th><td>{{ $detail->category->content ?? '' }}</td></tr>
+                <tr><th>お問い合わせ内容</th><td>{!! nl2br(e($detail->detail)) !!}</td></tr>
             </table>
             <form action="/delete" method="post" class="modal__delete-form">
                 @csrf
-                <input type="hidden" name="id" id="delete-id">
+                <input type="hidden" name="id" value="{{ $detail->id }}">
                 <button type="submit" class="modal__delete-btn" onclick="return confirm('本当に削除しますか？')">削除</button>
             </form>
         </div>
+        @endif
     </div>
 </div>
-<div class="modal-overlay" id="modal-overlay"></div>
+<div class="modal-overlay {{ $detail ? 'is-show' : '' }}" id="modal-overlay"></div>
 @endsection('content')

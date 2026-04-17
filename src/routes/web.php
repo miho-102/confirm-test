@@ -32,4 +32,6 @@ Route::get('/admin', [AdminController::class, 'index']);
 
 Route::middleware('auth')->group(function () {
     Route::get('/admin', [AdminController::class, 'index']);
+    Route::post('/delete', [AdminController::class, 'destroy']);
+    Route::get('/admin/export', [AdminController::class, 'export']);
 });
