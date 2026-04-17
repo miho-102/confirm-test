@@ -6,16 +6,16 @@ use Illuminate\Http\Request;
 use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 
-class AuthCOntroller extends Controller
+class AuthController extends Controller
 {
     public function register()
     {
     return view('auth.register');
     }
 
-        public function store(RegisterRequest $request) 
+        public function store(RegisterRequest $request)
     {
-    return redirect('/'); 
+    return redirect('/');
     }
 
     public function login()

@@ -25,4 +25,15 @@ public function category()
         return $this->belongsTo(Category::class);
     }
 
+public function getGenderLabelAttribute()
+    {
+        $genders = [
+            1 => '男性',
+            2 => '女性',
+            3 => 'その他'
+        ];
+
+        return $genders[$this->gender] ?? '不明';
+    }
+
 }

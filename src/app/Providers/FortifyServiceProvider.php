@@ -38,26 +38,13 @@ class FortifyServiceProvider extends ServiceProvider
         Fortify::loginView(function () {
             return view('auth.login');
         });
+        
+        $this->app->bind(\Laravel\Fortify\Http\Requests\LoginRequest::class, function ($app) {
+            return $app->make(\App\Http\Requests\LoginRequest::class);
+        });
 
-        $this->app->bind(
-            \Laravel\Fortify\Http\Requests\RegisterRequest::class,
-            \App\Http\Requests\RegisterRequest::class
-        );
-
-        $this->app->bind(
-            \Laravel\Fortify\Http\Requests\LoginRequest::class,
-            \App\Http\Requests\LoginRequest::class
-        );
-
-        Fortify::authenticateUsing(function ($request) {
-            $user = \App\Models\User::where('email', $request->email)->first();
-
-            if ($user && \Illuminate\Support\Facades\Hash::check($request->password, $user->password)) {
-                return $user;
-            }
-            throw \Illuminate\Validation\ValidationException::withMessages([
-                'email' => 'ログイン情報が登録されていません',
-            ]);
+        $this->app->bind(\Laravel\Fortify\Http\Requests\RegisterRequest::class, function ($app) {
+            return $app->make(\App\Http\Requests\RegisterRequest::class);
         });
 
         RateLimiter::for('login', function (Request $request) {

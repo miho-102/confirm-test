@@ -25,7 +25,11 @@ Route::get('/',[ContactController::class,'index']);
 Route::post('/confirm',[ContactController::class,'confirm']);
 route::post('/thanks',[ContactController::class,'store']);
 Route::post('/back', [ContactController::class, 'back']);
-Route::get('/register', [AuthController::class, 'register']);
-Route::post('/register', [AuthController::class, 'store']);
-Route::get('/login', [AuthController::class, 'login']);
+//Route::get('/register', [AuthController::class, 'register']);
+//Route::post('/register', [AuthController::class, 'store']);
+//Route::get('/login', [AuthController::class, 'login']);
 Route::get('/admin', [AdminController::class, 'index']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/admin', [AdminController::class, 'index']);
+});

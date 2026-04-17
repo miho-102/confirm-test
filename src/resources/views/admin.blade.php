@@ -18,7 +18,7 @@
     <h2 class="page-title">Admin</h2>
 
 <div class="search-section">
-    <form action="/search" method="get" class="search-form">
+    <form action="/admin" method="get" class="search-form">
         <input type="text" name="keyword" class="input-keyword" value="{{ request('keyword') }}" placeholder="名前やメールアドレスを入力してください">
         <select name="gender" class="select-gender">
             <option value="">性別</option>
@@ -68,18 +68,9 @@
                 <td>{{ $contact->email }}</td>
                 <td>{{ $contact->category->content ?? '種類不明' }}</td>
                 <td>
-                    <button class="detail-btn"
-                    data-id="{{ $contact->id }}"
-                    data-name="{{ $contact->last_name }} {{ $contact->first_name }}"
-                    data-gender="{{ $contact->gender_label }}"
-                    data-email="{{ $contact->email }}"
-                    data-tel="{{ $contact->tel }}"
-                    data-address="{{ $contact->address }}"
-                    data-building="{{ $contact->building }}"
-                    data-category="{{ $contact->category->content ?? '未設定' }}"
-                    data-detail="{{ $contact->detail }}">
-                    詳細
-                    </button>
+                    <a href="{{ request()->fullUrlWithQuery(['id' => $contact->id]) }}" class="detail-btn">
+                        詳細
+                    </a>
                 </td>
             </tr>
             @endforeach
